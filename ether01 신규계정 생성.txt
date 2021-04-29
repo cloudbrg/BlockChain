@@ -1,0 +1,39 @@
+cloudbrg@cloudbrg-ubun-vm-01:~$ geth account new
+INFO [04-28|07:31:27.094] Maximum peer count                       ETH=50 LES=0 total=50
+INFO [04-28|07:31:27.096] Smartcard socket not found, disabling    err="stat /run/pcscd/pcscd.comm: no such file or directory"
+Your new account is locked with a password. Please give a password. Do not forget this password.
+Password: 
+Repeat password: 
+
+Your new key was generated
+
+Public address of the key:   0xF0e18b5fFaB063ab5090F20b91951a4DA88Fd3EC
+Path of the secret key file: /home/cloudbrg/.ethereum/keystore/UTC--2021-04-28T07-31-39.680201066Z--f0e18b5ffab063ab5090f20b91951a4da88fd3ec
+
+- You can share your public address with anyone. Others need it to interact with you.
+- You must NEVER share the secret key with anyone! The key controls access to your funds!
+- You must BACKUP your key file! Without the key, it's impossible to access account funds!
+- You must REMEMBER your password! Without the password, it's impossible to decrypt the key!
+
+
+
+
+
+{"address":"f0e18b5ffab063ab5090f20b91951a4da88fd3ec","crypto":{"cipher":"aes-128-ctr","ciphertext":"9923e17fca9e5e941dd7e97f75e376b8227bba4af5f059368d34be1ccd563af9","cipherparams":{"iv":"696bdeae5c4883c7c2731ffa314441e1"},"kdf":"scrypt","kdfparams":{"dklen":32,"n":262144,"p":1,"r":8,"salt":"f3b541bf5a957fef7ff994e62af35c38b327e91e16bfd480e7acf75e9ec52c63"},"mac":"d01cce10d362f60ec2ffc00c6d8f5071febdcdf94c0912f3ca41ff35afccfc56"},"id":"f0edec57-e049-4a41-9bd1-42731b9aa0e8","version":3}
+
+
+[¿¹½Ã]
+geth --http --miner.etherbase 00xF0e18b5fFaB063ab5090F20b91951a4DA88Fd3EC
+
+Using ethminer with geth
+First create an account to hold your block rewards.
+
+geth account new
+Follow the prompts and enter a good password. DO NOT FORGET YOUR PASSWORD. Also take note of the public Ethereum address which is printed at the end of the account creation process. In the following examples, we will use 0xC95767AC46EA2A9162F0734651d6cF17e5BfcF10 as the example address.
+
+Now start geth and wait for it to sync the blockchain. This will take quite a while.
+
+geth --http --miner.etherbase 0xC95767AC46EA2A9162F0734651d6cF17e5BfcF10
+Now we¡¯re ready to start mining. In a new terminal session, run ethminer and connect it to geth:
+
+ethminer -G -p http://127.0.0.1:8545
